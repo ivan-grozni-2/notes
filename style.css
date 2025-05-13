@@ -55,6 +55,19 @@ nav{
     padding: 5px;
     margin: 10px;
     background-color: rgb(103, 202, 235);
+    box-shadow: 0 7px 5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow ease 0.5s, transform ease 0.5s;
+}
+
+.container button:hover{
+    background-color: rgb(103, 140, 235);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translatey(3px);
+}
+
+.container button:active{
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    transform: translatey(6px);
 }
 
 .main-body{
