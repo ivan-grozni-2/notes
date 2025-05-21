@@ -7,8 +7,8 @@ let notes = [];
 let theIndex = 0;
 
 contain.addEventListener('submit',function(e){
-    console.log("clicked");
     e.preventDefault();
+    if(n==='') return;
     const n = Note.value.trim();
     if (n !== ''){
         notes.push(n);
@@ -16,6 +16,18 @@ contain.addEventListener('submit',function(e){
        saveToStorage();
     }
     Note.value='';
+    document.querySelectorAll('#saved-notes li').forEach(item => item.classList.remove('selected'));
+})
+
+save.addEventListener('click', function(e){
+    console.log("clicked " + theIndex);
+    e.preventDefault();
+    const n = Note.value.trim();
+    if (n !== ''){
+     
+    notes[theIndex] = n;
+    listNote();
+    }
 })
 
 function listNote(){
@@ -38,6 +50,7 @@ function listNote(){
             document.querySelectorAll('#saved-notes li').forEach(item => item.classList.remove('selected'));
             li.classList.add('selected');
             save.disabled = false;
+            theIndex=index;
 
         })
         saved.appendChild(li);

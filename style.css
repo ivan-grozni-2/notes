@@ -141,3 +141,26 @@ nav{
 .deleteButton:hover{
     color: #e74c3c;
 }
+
+@media (max-width: 750px) {
+    body{
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav{
+        width: 100%;
+        height: auto;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    #saved-notes{
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+
+}
