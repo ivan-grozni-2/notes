@@ -10,6 +10,7 @@ body{
     line-height: 1.6;
     padding: 0px;
     height:100vh;
+    overflow: hidden;
     width:95vw;
     display: flex;
     flex-direction: row;
@@ -33,7 +34,9 @@ nav{
     margin-bottom: 30px;
     margin: 0px;
     width: 20%;
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 
 }
 .container{
@@ -75,6 +78,11 @@ nav{
     transform: translatey(6px);
 }
 
+.container button:disabled{
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    transform: translatey(6px);
+}
+
 .main-body{
     display: flex;
     flex-direction: row;
@@ -82,9 +90,54 @@ nav{
     width:100%;
 }
 #saved-notes{
+    flex: 1;
     max-height: 85vh;
     overflow-y: auto;
     padding: 10px;
     scrollbar-width: thin;
 
+}
+#saved-notes::-webkit-scrollbar{
+    width: 8px;
+}
+
+#saved-notes::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 4px;
+}
+
+#saved-notes li{
+    margin-bottom: 10px;
+    background: #f0f0ff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+
+}
+
+#saved-notes li:hover{
+    background:#d8eafd;
+    transform: translatex(4px);
+}
+#saved-notes li.selected{
+    background:#d8eafd;
+    color: white;
+    transform: translatex(4px);
+}
+
+.deleteButton{
+    background: transparent;
+    border: none;
+    color: #374cfc;
+    font-size: 1.1rem;
+    float: right;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.deleteButton:hover{
+    color: #e74c3c;
 }
