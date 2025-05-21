@@ -8,17 +8,19 @@
 </head>
 <body>
         <nav>
-            <h3> note lists</h3>
-            <ui class="saved-notes">          
-            </ui>
+            <div>
+                <h3> note lists</h3>
+                <button type="button" id="hide">lists</button>
+            </div>
+            <ui id="saved-notes"></ui>
         </nav>
 
-        <div class="container">
+        <form id="written" class="container">
             <h1> Notes </h1>
             <textarea id="theNote" name="write here" rows="10" placeholder="write here" required></textarea>
-            <button id="addnote"> +Add note</button>
-            
-        </div>
-   
+            <button type="submit"> +Add note</button>
+        </form>
+        
+   <script src="script.js"></script>
 </body>
 </html>
