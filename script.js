@@ -7,9 +7,10 @@ let notes = [];
 let theIndex = 0;
 
 contain.addEventListener('submit',function(e){
+    console.log("clicked");
     e.preventDefault();
-    if(n==='') return;
     const n = Note.value.trim();
+    if(n==='') return;
     if (n !== ''){
         notes.push(n);
        listNote();
